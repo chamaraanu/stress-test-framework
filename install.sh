@@ -14,3 +14,7 @@
 # limitations under the License.
 
 echo "Install ..."
+
+
+echo "Run WSO2" 
+
