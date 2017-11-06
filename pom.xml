@@ -39,12 +39,16 @@
                     </execution>
                 </executions>
                 <configuration>
-	 	    <jmeterVersion>3.2</jmeterVersion>
+                    <jmeterVersion>3.2</jmeterVersion>
+                    <jmeterExtensions>
+                        <artifact>kg.apc:jmeter-plugins:pom:1.1.3</artifact>
+                    </jmeterExtensions>
                     <testFilesIncluded>
                         <!--<jMeterTestFile>path/sample.jmx</jMeterTestFile>-->
-                        <jMeterTestFile>CUSTOM/Stepping_Thread_Test_Any_Product.jmx</jMeterTestFile>
+                        <!--<jMeterTestFile>CUSTOM/Stepping_Thread_Test_Any_Product.jmx</jMeterTestFile>-->
+                        <jMeterTestFile>CUSTOM/Concurrency_Thread_Group.jmx</jMeterTestFile>
                     </testFilesIncluded>
-		    <propertiesJMeter>
+                    <propertiesJMeter>
                         <log_level.jmeter>DEBUG</log_level.jmeter>
                     </propertiesJMeter>
                     <propertiesFilesDirectory>CUSTOM/</propertiesFilesDirectory>
@@ -60,6 +64,11 @@
             <groupId>com.lazerycode.jmeter</groupId>
             <artifactId>jmeter-maven-plugin</artifactId>
             <version>2.0.3</version>
+        </dependency>
+        <dependency>
+            <groupId>kg.apc</groupId>
+            <artifactId>jmeter-plugins-standard</artifactId>
+            <version>1.1.3</version>
         </dependency>
     </dependencies>
 </project>
