@@ -20,15 +20,11 @@ package org.wso2.stress;
 
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
 import java.io.IOException;
 
-/**
- * Created by chamara on 11/8/17.
- */
+
 public class MakeStress {
 
     private static final Log log = LogFactory.getLog(MakeStress.class);

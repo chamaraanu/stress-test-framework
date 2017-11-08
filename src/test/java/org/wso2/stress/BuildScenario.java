@@ -18,33 +18,32 @@
 
 package org.wso2.stress;
 
-/*import org.apache.jmeter.control.LoopController;
+import org.apache.jmeter.control.LoopController;
 import org.apache.jmeter.engine.StandardJMeterEngine;
 import org.apache.jmeter.protocol.http.sampler.HTTPSampler;
 import org.apache.jmeter.testelement.TestElement;
 import org.apache.jmeter.testelement.TestPlan;
 import org.apache.jmeter.threads.SetupThreadGroup;
 import org.apache.jmeter.util.JMeterUtils;
-import org.apache.jorphan.collections.HashTree;*/
+import org.apache.jorphan.collections.HashTree;
 import org.testng.annotations.BeforeSuite;
 
-/**
- * Created by chamara on 11/8/17.
- */
+
+
 public class BuildScenario {
 
     @BeforeSuite
     public void buildScenario()  {
 
-        System.out.println("BeforeSuite");
-/*        StandardJMeterEngine jm = new StandardJMeterEngine();
+        StandardJMeterEngine jm = new StandardJMeterEngine();
         JMeterUtils.loadJMeterProperties("/home/chamara/Programs/apache-jmeter-3.2/bin/jmeter.properties");
         HashTree hashTree = new HashTree();
 
+
         HTTPSampler httpSampler = new HTTPSampler();
-        httpSampler.setDomain("www.google.com");
-        httpSampler.setPort(80);
-        httpSampler.setPath("/");
+        httpSampler.setDomain("localhost");
+        httpSampler.setPort(9443);
+        httpSampler.setPath("/carbon");
         httpSampler.setMethod("GET");
 
         // Loop Controller
@@ -69,6 +68,6 @@ public class BuildScenario {
 
         jm.configure(hashTree);
 
-        jm.run();*/
+        jm.run();
     }
 }

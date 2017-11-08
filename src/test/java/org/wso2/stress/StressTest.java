@@ -27,7 +27,7 @@ import java.io.IOException;
 
 public class StressTest {
 
-    private static final Log log = LogFactory.getLog(MakeStress.class);
+    private static final Log log = LogFactory.getLog(StressTest.class);
 
     @Parameters({ "jmeterHome" , "testPlan" , "resultCsv"})
     @Test
