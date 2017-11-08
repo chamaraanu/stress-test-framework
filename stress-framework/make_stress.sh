@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-CPU=${1:-2}
+CPU=${1:-4}
 IO=${2:-1}
 VM=${3:-1}
 VM_BYTES=${4:-128M}

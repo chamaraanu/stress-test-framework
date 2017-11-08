@@ -18,35 +18,38 @@
 
 package org.wso2.stress;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import java.io.IOException;
 
-
-public class StressTest {
+/**
+ * Created by chamara on 11/8/17.
+ */
+public class MakeStress {
 
     private static final Log log = LogFactory.getLog(MakeStress.class);
 
-    @Parameters({ "jmeterHome" , "testPlan" , "resultCsv"})
+    @Parameters({ "cpu", "io", "vms", "vmBytes", "timeout"})
     @Test
-    public void runJmeterProcess(String jmeterHome, String testPlan, String resultCsv) {
-
-        String jmeterCommand = "sh " + jmeterHome + "/bin/jmeter.sh -n -t" + testPlan + " -l " + resultCsv;
+    public void makeStress(String cpu, String io, String vms, String vmBytes, String timeout) {
+        String stressCommand = "stress --cpu " + cpu + " --io " + io + " --vm " + vms + " --vm-bytes " + vmBytes +
+                " --timeout " + timeout + " --verbose";
         Runtime runtime = Runtime.getRuntime();
 
         try {
-            Process exec = runtime.exec(jmeterCommand);
+            Process exec = runtime.exec(stressCommand);
             exec.waitFor();
 
         } catch (IOException e) {
-            String msg = "Error occurred while executing jmeter script";
+            String msg = "Error occurred while processing stress";
             log.error(msg, e);
         } catch (InterruptedException e) {
-            String msg = "Jmeter execution interrupted";
+            String msg = "Stress execution interrupted";
             log.error(msg, e);
         }
-
     }
 }
