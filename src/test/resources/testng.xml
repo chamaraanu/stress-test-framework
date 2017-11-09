@@ -20,9 +20,10 @@
     <test name="BuildScenario" >
         <classes>
             <class name="org.wso2.stress.BuildScenario" />
+            <class name="org.wso2.stress.JmeterTest" />
         </classes>
     </test>
-    <test name="Test-class test" parallel="classes" thread-count="2">
+    <!--<test name="Test-class test" parallel="classes" thread-count="2">
         <parameter name="cpu" value="4"/>
         <parameter name="io" value="1"/>
         <parameter name="vms" value="1"/>
@@ -36,5 +37,5 @@
             <class name="org.wso2.stress.MakeStress" />
             <class name="org.wso2.stress.StressTest" />
         </classes>
-    </test>
+    </test>-->
 </suite>

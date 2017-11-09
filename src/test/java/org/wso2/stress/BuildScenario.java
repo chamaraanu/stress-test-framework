@@ -18,6 +18,8 @@
 
 package org.wso2.stress;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.jmeter.control.LoopController;
 import org.apache.jmeter.engine.StandardJMeterEngine;
 import org.apache.jmeter.protocol.http.sampler.HTTPSampler;
@@ -27,10 +29,12 @@ import org.apache.jmeter.threads.SetupThreadGroup;
 import org.apache.jmeter.util.JMeterUtils;
 import org.apache.jorphan.collections.HashTree;
 import org.testng.annotations.BeforeSuite;
-
+import org.testng.annotations.Test;
 
 
 public class BuildScenario {
+
+    private static final Log log = LogFactory.getLog(MakeStress.class);
 
     @BeforeSuite
     public void buildScenario()  {
@@ -38,6 +42,7 @@ public class BuildScenario {
         StandardJMeterEngine jm = new StandardJMeterEngine();
         JMeterUtils.loadJMeterProperties("/home/chamara/Programs/apache-jmeter-3.2/bin/jmeter.properties");
         HashTree hashTree = new HashTree();
+
 
 
         HTTPSampler httpSampler = new HTTPSampler();
@@ -69,5 +74,13 @@ public class BuildScenario {
         jm.configure(hashTree);
 
         jm.run();
+    }
+
+    @Test
+    public void smapleTest() {
+
+        String msg = "Sample Test";
+        log.info(msg);
+
     }
 }
