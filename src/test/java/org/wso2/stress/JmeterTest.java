@@ -22,15 +22,17 @@ public class JmeterTest {
         StandardJMeterEngine jmeter = new StandardJMeterEngine();
 
         JMeterUtils.setJMeterHome("/home/chamara/Programs/apache-jmeter-3.2");
-        JMeterUtils.loadJMeterProperties("/home/chamara/Programs/apache-jmeter-3.2/bin/jmeter.properties");
+        JMeterUtils.loadJMeterProperties("/home/chamara/Programs/apache-jmeter-3.2/bin/" +
+                "jmeter.properties");
         JMeterUtils.initLogging();
         JMeterUtils.initLocale();
 
         try {
             SaveService.loadProperties();
 
-            /*File in = new File("/home/chamara/stress-test-framework/src/test/jmeter/CUSTOM/Concurrency_Thread_Group.jmx");*/
-            File in = new File("/home/chamara/Federation_Proxy.jmx");
+            File in = new File("/home/chamara/stress-test-framework/src/test/jmeter/" +
+                    "CUSTOM/Concurrency_Thread_Group.jmx");
+            /*File in = new File("/home/chamara/Federation_Proxy.jmx");*/
             HashTree testPlanTree = SaveService.loadTree(in);
             jmeter.configure(testPlanTree);
             jmeter.run();

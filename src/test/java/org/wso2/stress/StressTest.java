@@ -33,7 +33,8 @@ public class StressTest {
     @Test
     public void runJmeterProcess(String jmeterHome, String testPlan, String resultCsv) {
 
-        String jmeterCommand = "sh " + jmeterHome + "/bin/jmeter.sh -n -t" + testPlan + " -l " + resultCsv;
+        String jmeterCommand = "sh " + jmeterHome + "/bin/jmeter.sh -n -t" + testPlan + " -l " +
+                resultCsv;
         Runtime runtime = Runtime.getRuntime();
 
         try {

@@ -32,7 +32,8 @@ public class MakeStress {
     @Parameters({ "cpu", "io", "vms", "vmBytes", "timeout"})
     @Test
     public void makeStress(String cpu, String io, String vms, String vmBytes, String timeout) {
-        String stressCommand = "stress --cpu " + cpu + " --io " + io + " --vm " + vms + " --vm-bytes " + vmBytes +
+        String stressCommand = "stress --cpu " + cpu + " --io " + io + " --vm " + vms +
+                " --vm-bytes " + vmBytes +
                 " --timeout " + timeout + " --verbose";
         Runtime runtime = Runtime.getRuntime();
 
