@@ -27,8 +27,7 @@ THREAD_COUNT_ARRAY=(1000 1500)
 
 for threads in ${THREAD_COUNT_ARRAY[@]}
 do
-    report_location=stress_result/${threads}Threads
-    mkdir -p report_location
+    report_location=target/${threads}Threads
     jmeter -n -t ../src/test/jmeter/CUSTOM/Ultimate_Thread_Group.jmx -X \
         -Jtotal_threads=$threads \
         -l ${report_location}/results.jtl
