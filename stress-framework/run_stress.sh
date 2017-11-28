@@ -23,7 +23,7 @@ done
 export JMETER_HOME="${jmeter_dir}"
 export PATH=$JMETER_HOME/bin:$PATH
 
-THREAD_COUNT_ARRAY=(100 200 500 1000 1500 2000)
+THREAD_COUNT_ARRAY=(1000 1500)
 
 for threads in ${THREAD_COUNT_ARRAY[@]}
 do

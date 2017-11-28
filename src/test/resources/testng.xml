@@ -16,25 +16,13 @@
   ~  under the License.
 -->
 
-<suite name="Test-class Suite" parallel="tests" thread-count="2">
+<suite name="Test-class Suite">
     <test name="Jmeter Test" >
-        <parameter name="jmeterHome" value="/home/chamara/Programs/apache-jmeter-3.2"/>
-        <parameter name="testPlan" value="/home/chamara/stress-test-framework/src/test/jmeter/CUSTOM/Concurrency_Thread_Group.jmx"/>
-        <parameter name="resultCsv" value="/home/chamara/stress-test-framework/target/Concurrency_Thread_Group.csv"/>
+        <parameter name="jmeterHome" value="/Users/chamaraa/apache-jmeter-3.2"/>
+        <parameter name="testPlan" value="/Users/chamaraa/stress-test-framework/src/test/jmeter/CUSTOM/Ultimate_Thread_Group.jmx"/>
+        <parameter name="resultCsv" value="/Users/chamaraa/stress-test-framework/target/Ultimate_Thread_Group.csv"/>
         <classes>
-            <!--<class name="org.wso2.stress.BuildScenario" />-->
-            <!--<class name="org.wso2.stress.JmeterTest" />-->
             <class name="org.wso2.stress.StressTest" />
-        </classes>
-    </test>
-    <test name="Stress" >
-        <parameter name="cpu" value="4"/>
-        <parameter name="io" value="1"/>
-        <parameter name="vms" value="1"/>
-        <parameter name="vmBytes" value="1G"/>
-        <parameter name="timeout" value="60s"/>
-        <classes>
-            <class name="org.wso2.stress.MakeStress" />
         </classes>
     </test>
 </suite>
